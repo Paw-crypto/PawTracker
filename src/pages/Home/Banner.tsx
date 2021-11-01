@@ -99,16 +99,6 @@ const Banner: React.FC = () => {
           </Button>
         </Link>
 
-        {/* <Button
-          ghost
-          href="https://bananolooker.com"
-          onClick={() => {
-            Tracker.ga4?.gtag("event", "GoToBananoLooker");
-          }}
-        >
-          <img alt="Go to BananoLooker" src={`/banano.svg`} height="12px" />
-        </Button> */}
-
         <Button
           ghost
           href="https://www.nanosquares.io/?ref=nano_3ksr1be8o7swdxzcaghq9rurh7ieuk1uztpa6mgq9ctc5rphn1om3q1oa1sc"

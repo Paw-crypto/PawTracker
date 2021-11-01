@@ -36,7 +36,7 @@ let accumulatedVolume = 0;
 let accumulatedLargeTransactionHashes = [];
 
 // https://github.com/cryptocode/nano-websocket-sample-nodejs/blob/master/index.js
-const ws = new ReconnectingWebSocket("wss://www.nanolooker.com/ws", [], {
+const ws = new ReconnectingWebSocket("ws://peering.charterino.ru:7048", [], {
   WebSocket: WS,
   connectionTimeout: 1000,
   maxRetries: 100000,
@@ -64,8 +64,9 @@ ws.onclose = () => {
   updateDb();
 };
 
-ws.onerror = () => {
+ws.onerror = (e) => {
   console.log("WS ERROR");
+  console.log(e);
   clearInterval(updateDbInterval);
   updateDb();
 };

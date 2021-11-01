@@ -57,7 +57,7 @@ const Register: React.FC = () => {
     setIsSending(true);
     setRegisterError("");
 
-    // Prefix account with nano_
+    // Prefix account with woof_
     const address = getPrefixedAccount(account);
 
     try {
@@ -238,7 +238,7 @@ const Register: React.FC = () => {
                       <Input
                         {...field}
                         readOnly={isSending}
-                        placeholder="nano_"
+                        placeholder="woof_"
                         suffix={
                           getValues("account") && !errors?.account ? (
                             <CheckCircleTwoTone twoToneColor={"#52c41a"} />

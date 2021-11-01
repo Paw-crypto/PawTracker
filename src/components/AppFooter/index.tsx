@@ -27,7 +27,7 @@ const AppFooter: React.FC = () => {
           rel="noopener noreferrer"
           target="_blank"
         >
-          <GithubOutlined /> NanoLooker
+          <GithubOutlined /> WoofPark
         </a>{" "}
         ©{new Date().getFullYear()}{" "}
         {t("footer.createdBy", { creator: "RunningCoder" })}

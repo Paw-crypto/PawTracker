@@ -27,7 +27,7 @@ const FilterTransactionsRangePreferences: React.FC<Props> = ({
 
   const marks = React.useCallback(() => {
     return units.reduce((acc, { unit, raw }, index) => {
-      if (raw === 1e30) {
+      if (raw === 1e26) {
         acc[index] = {
           label: (
             <>

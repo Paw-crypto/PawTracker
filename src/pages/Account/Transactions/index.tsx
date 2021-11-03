@@ -224,7 +224,7 @@ const TransactionsTable = ({
                       {["receive", "open"].includes(transactionType) ? "+" : ""}
                       {subtype === "send" ? "-" : ""}
                       {amount && amount !== "0"
-                        ? `${new BigNumber(rawToRai(amount)).toFormat()} WOOF`
+                        ? `${new BigNumber(rawToRai(amount)).toFormat()} PAW`
                         : ""}
                     </Text>
                   </Col>

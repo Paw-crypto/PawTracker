@@ -208,7 +208,7 @@ const BlockDetails: React.FC = () => {
                     isSmallAndLower &&
                     new BigNumber(amount).toFormat().length >= 25
                       ? ""
-                      : "WOOF"
+                      : "PAW"
                   }
                   value={
                     amount >= 1 ? amount : new BigNumber(amount).toFormat()
@@ -234,7 +234,7 @@ const BlockDetails: React.FC = () => {
                   {...skeletonProps}
                   title={{ width: isSmallAndLower ? "100%" : "33%" }}
                 >
-                  {new BigNumber(balance).toFormat()} WOOF
+                  {new BigNumber(balance).toFormat()} PAW
                   <br />
                 </Skeleton>
                 <Skeleton

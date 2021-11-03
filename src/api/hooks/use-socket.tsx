@@ -121,7 +121,7 @@ const useSocket = () => {
     isForcedClosed = false;
     setIsConnected(false);
 
-    ws = new WebSocket(websocketDomain || "ws://peering.charterino.ru:7048");
+    ws = new WebSocket(websocketDomain || "wss://ws.paw.digital");
 
     ws.onopen = () => {
       setIsError(false);

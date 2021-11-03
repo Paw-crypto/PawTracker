@@ -49,7 +49,7 @@ const App: React.FC = () => {
     <>
       <Helmet>
         <html lang={i18next.language} />
-        <title>WoofPark {t("common.blockExplorer")}</title>
+        <title>PawTracker {t("common.blockExplorer")}</title>
         <meta
           name="description"
           content="Block explorer of the Nano cryptocurrency"

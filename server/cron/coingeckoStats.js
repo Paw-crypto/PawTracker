@@ -176,21 +176,21 @@ const getMarketCapStats = async () => {
           redditSubscribers,
           githubStars,
           twitterFollowersPerBillion: twitterFollowers
-            ? new BigNumber(1_000_000_000)
+            ? new BigNumber(1000000000)
                 .times(twitterFollowers)
                 .dividedBy(marketCap)
                 .integerValue()
                 .toNumber()
             : null,
           redditSubscribersPerBillion: redditSubscribers
-            ? new BigNumber(1_000_000_000)
+            ? new BigNumber(1000000000)
                 .times(redditSubscribers)
                 .dividedBy(marketCap)
                 .integerValue()
                 .toNumber()
             : null,
           githubStarsPerBillion: githubStars
-            ? new BigNumber(1_000_000_000)
+            ? new BigNumber(1000000000)
                 .times(githubStars)
                 .dividedBy(marketCap)
                 .integerValue()

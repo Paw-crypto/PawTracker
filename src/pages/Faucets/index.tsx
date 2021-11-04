@@ -69,7 +69,7 @@ const FaucetsPage: React.FC = () => {
             </Col>
           </Row>
         ) : null}
-        {faucets.map(({ alias, account, link, byLink }) => {
+        {faucets.map(({ alias, account, link }) => {
           const { height, local_timestamp: localTimestamp = 0 } =
             accountHistories?.find(
               ({ account: historyAccount }) => historyAccount === account,
@@ -80,15 +80,6 @@ const FaucetsPage: React.FC = () => {
             <Row gutter={6} key={alias}>
               <Col xs={24} sm={6} xl={4}>
                 {alias}
-                {byLink ? (
-                  <>
-                    <br />
-                    {t("common.by")}{" "}
-                    <a href={byLink} target="_blank" rel="noopener noreferrer">
-                      {byLink}
-                    </a>
-                  </>
-                ) : null}
               </Col>
               <Col xs={24} sm={4} xl={4}>
                 <Skeleton loading={isLoading} active paragraph={false}>

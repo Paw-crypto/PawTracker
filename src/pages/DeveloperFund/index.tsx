@@ -139,7 +139,7 @@ const DeveloperFund: React.FC = () => {
               <Col xs={24} sm={18}>
                 <LoadingStatistic
                   isLoading={skeletonProps.loading}
-                  suffix="NANO"
+                  suffix="PAW"
                   value={totalBalance}
                 />
                 <Skeleton {...skeletonProps}>
@@ -171,7 +171,7 @@ const DeveloperFund: React.FC = () => {
                   loading={!lastTransactionAmount}
                   paragraph={false}
                 >
-                  {lastTransactionAmount} NANO
+                  {lastTransactionAmount} PAW
                   <br />
                 </Skeleton>
                 <Skeleton
@@ -247,7 +247,7 @@ const DeveloperFund: React.FC = () => {
                 {t("common.balance")}
               </Col>
               <Col xs={24} sm={18}>
-                {new BigNumber("7000000").toFormat()} NANO
+                {new BigNumber("7000000").toFormat()} PAW
                 <br />
                 {t("pages.developerFund.percentOfTotal", {
                   percent: new BigNumber(7000000 * 100)
@@ -304,7 +304,7 @@ const DeveloperFund: React.FC = () => {
                   display: "block",
                 }}
               >
-                {balance} NANO
+                {balance} PAW
               </span>
             </Col>
             <Col sm={14} md={14} xl={18}>

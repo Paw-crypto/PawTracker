@@ -16,21 +16,7 @@ const extraKnownAccounts = require("./knownAccounts.json");
 const faucetAccounts = require("../../src/pages/Faucets/faucets.json");
 
 const doKnownAccountsCron = async () => {
-  let knownAccounts = [];
-  try {
-    const res = await fetch("https://mynano.ninja/api/accounts/aliases");
-    knownAccounts = (await res.json()) || [];
-
-    // Merge knownAccounts.json list
-    knownAccounts = uniqBy(knownAccounts.concat(extraKnownAccounts), "account");
-    knownAccounts = uniqBy(knownAccounts.concat(faucetAccounts), "account");
-
-    nodeCache.set(KNOWN_ACCOUNTS, knownAccounts);
-  } catch (err) {
-    console.log("Error", err);
-    Sentry.captureException(err);
-  }
-
+  let knownAccounts = uniqBy(extraKnownAccounts.concat(faucetAccounts), "account");
   return knownAccounts;
 };
 

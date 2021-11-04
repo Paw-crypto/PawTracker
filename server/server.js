@@ -11,7 +11,6 @@ require("./cron/coingeckoStats");
 require("./cron/btcTransactionFees");
 require("./cron/nanotickerStats");
 require("./cron/nanobrowserquestStats");
-require("./cron/2minersStats");
 require("./cron/youtubePlaylist");
 require("./ws");
 const { getDistributionData } = require("./cron/distribution");
@@ -43,10 +42,6 @@ const {
   getCoingeckoStats,
   getCoingeckoMarketCapStats,
 } = require("./api/coingeckoStats");
-const { get2MinersStats } = require("./api/2minersStats");
-const {
-  getDeveloperFundTransactions,
-} = require("./api/developerFundTransactions");
 const { getLargeTransactions } = require("./api/largeTransactions");
 const { getNodeStatus } = require("./api/nodeStatus");
 const {
@@ -129,12 +124,6 @@ app.get("/api/exchange-tracker", async (req, res) => {
   res.send(exchangeBalances);
 });
 
-app.get("/api/developer-fund/transactions", async (req, res) => {
-  const { developerFundTransactions } = await getDeveloperFundTransactions();
-
-  res.send(developerFundTransactions);
-});
-
 app.get("/api/market-statistics", async (req, res) => {
   const cachedConfirmations24h = nodeCache.get(TOTAL_CONFIRMATIONS_24H);
   const cachedVolume24h = nodeCache.get(TOTAL_VOLUME_24H);
@@ -164,12 +153,6 @@ app.get("/api/market-statistics", async (req, res) => {
 
 app.get("/api/statistics/social", async (req, res) => {
   const data = await getCoingeckoMarketCapStats();
-
-  res.send(data);
-});
-
-app.get("/api/statistics/2miners", async (req, res) => {
-  const data = await get2MinersStats();
 
   res.send(data);
 });

@@ -12,7 +12,6 @@ import AppFooter from "components/AppFooter";
 import HomePage from "pages/Home";
 import RepresentativesPage from "pages/Representatives";
 import DeveloperFundPage from "pages/DeveloperFund";
-import DeveloperFundTransactionsPage from "pages/DeveloperFund/Transactions";
 import DistributionPage from "pages/Distribution";
 import ExchangeTrackerPage from "pages/ExchangeTracker";
 import FaucetsPage from "pages/Faucets";
@@ -30,7 +29,6 @@ import NanoQuakeJSPage from "pages/NanoQuakeJS";
 import NanoBrowserQuestPage from "pages/NanoBrowserQuest";
 import TreasureHunt from "pages/TreasureHunt";
 import StatisticsSocial from "pages/Statistics/Social";
-import Statistics2Miners from "pages/Statistics/2Miners";
 import "components/utils/analytics";
 
 import "antd/dist/antd.css";
@@ -52,7 +50,7 @@ const App: React.FC = () => {
         <title>PawTracker {t("common.blockExplorer")}</title>
         <meta
           name="description"
-          content="Block explorer of the Nano cryptocurrency"
+          content="Block explorer of the Paw cryptocurrency"
         />
         <meta
           name="theme-color"
@@ -71,10 +69,6 @@ const App: React.FC = () => {
             <Route exact path="/" component={HomePage} />
             <Route path="/representatives" component={RepresentativesPage} />
             <Route exact path="/developer-fund" component={DeveloperFundPage} />
-            <Route
-              path="/developer-fund/transactions"
-              component={DeveloperFundTransactionsPage}
-            />
             <Route path="/known-accounts" component={KnownAccountsPage} />
             <Route path="/distribution" component={DistributionPage} />
             <Route path="/exchange-tracker" component={ExchangeTrackerPage} />
@@ -98,7 +92,6 @@ const App: React.FC = () => {
             <Route path="/nanobrowserquest" component={NanoBrowserQuestPage} />
             <Route path="/treasure-hunt/:account?" component={TreasureHunt} />
             <Route path="/statistics/social" component={StatisticsSocial} />
-            <Route path="/statistics/2miners" component={Statistics2Miners} />
           </Switch>
         </Content>
         <AppFooter />

@@ -41,7 +41,7 @@ const KnownAccountsPage: React.FC = () => {
             },
             render: (text: string) => (
               <span className="break-word">
-                {new BigNumber(text).toFormat()} NANO
+                {new BigNumber(text).toFormat()} PAW
               </span>
             ),
           },

@@ -67,7 +67,6 @@ const AccountPendingHistory: React.FC<Props> = ({
 
   React.useEffect(() => {
     if (!isKnownAccountsLoading) {
-      console.log(knownExchangeAccounts);
       setKnownExchangesList(
         knownExchangeAccounts.map(({ account }) => account),
       );

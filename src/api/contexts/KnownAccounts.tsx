@@ -43,7 +43,6 @@ const Provider: React.FC = ({ children }) => {
       const json = await res.json();
 
       !json || json.error ? setIsError(true) : setKnownAccounts(json);
-
       setKnownExchangeAccounts(
         [...KNOWN_EXCHANGE_ACCOUNTS].map(account =>
           find(json, ["account", account]),

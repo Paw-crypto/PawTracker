@@ -13,7 +13,7 @@ const ExtraRow: React.FC<Props> = ({ account }) => {
 
   return (
     <>
-      {knownAccounts.find(x => x.account == account) ? (
+      {knownAccounts.find(x => x.account == account)?.alias.includes('Distribution') ? (
         <Row gutter={6}>
           <Col xs={24} sm={6} md={4}>
             {t("common.statistics")}

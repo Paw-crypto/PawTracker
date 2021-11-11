@@ -18,9 +18,15 @@ const AppFooter: React.FC = () => {
 
   const donateColor =
     theme === Theme.DARK ? TwoToneColors.DONATE_DARK : TwoToneColors.DONATE;
-
   return (
     <Footer style={{ textAlign: "center" }}>
+	
+    </Footer>
+  );
+  /*
+  return (
+    <Footer style={{ textAlign: "center" }}>
+	
       <div>
         <a
           href="https://github.com/running-coder/nanolooker"
@@ -47,6 +53,7 @@ const AppFooter: React.FC = () => {
       </QRCodeModal>
     </Footer>
   );
+  */
 };
 
 export default AppFooter;

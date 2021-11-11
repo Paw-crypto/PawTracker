@@ -11,6 +11,7 @@ import { useHistory, useLocation } from "react-router-dom";
 import Search from "components/Search";
 import Price from "components/Price";
 import Preferences from "components/Preferences";
+import { Theme, PreferencesContext } from "api/contexts/Preferences";
 
 const { SubMenu } = Menu;
 const { Header } = Layout;
@@ -20,6 +21,7 @@ const AppHeader: React.FC = () => {
   const [activeMenu, setActiveMenu] = React.useState<string>("");
   const history = useHistory();
   const { pathname } = useLocation();
+  const { theme } = React.useContext(PreferencesContext);
 
   React.useEffect(() => {
     const key = pathname.replace(/\/?([^/]+)/, "$1");
@@ -32,9 +34,10 @@ const AppHeader: React.FC = () => {
         className="app-header"
         style={{
           paddingTop: "6px",
-          position: "relative",
+          position: "fixed",
           width: "100%",
           height: "auto",
+		  zIndex: 100
         }}
       >
         <Row style={{ alignItems: "center" }}>
@@ -49,7 +52,7 @@ const AppHeader: React.FC = () => {
             }}
           >
             <Link to="/" style={{ whiteSpace: "nowrap", marginRight: "10px" }}>
-              PawTracker
+              <img src={`/logo-${theme === Theme.DARK ? "dark" : "light"}.png`} />
             </Link>
           </Col>
           <Col xs={{ span: 24, order: 3 }} md={{ span: 12, order: 2 }}>
@@ -96,12 +99,6 @@ const AppHeader: React.FC = () => {
                 </Menu.Item>
               </SubMenu>
 
-              <Menu.Item key="news">
-                <CalendarOutlined />
-                {t("menu.news")}
-                <Link to="/news" />
-              </Menu.Item>
-
               <SubMenu
                 title={
                   <>
@@ -136,6 +133,7 @@ const AppHeader: React.FC = () => {
         style={{
           display: "flex",
           justifyContent: "space-between",
+		  marginTop: "72px"
         }}
       >
         <div
@@ -145,7 +143,7 @@ const AppHeader: React.FC = () => {
             flexWrap: "wrap",
             alignItems: "center",
             width: "100%",
-            marginRight: "12px",
+            marginRight: "12px"
           }}
         >
           <Price />

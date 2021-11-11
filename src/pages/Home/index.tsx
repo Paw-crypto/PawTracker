@@ -260,6 +260,12 @@ const HomePage = () => {
           </Card>
         </Col>
 
+      </Row>
+      <RecentTransactions />
+    </>
+  );
+		/* TAKEN OUT FOR NOW --
+		
         <Col
           xs={{ span: 24, order: 1 }}
           md={{ span: 12, order: 3 }}
@@ -313,11 +319,7 @@ const HomePage = () => {
               </Col>
             </Row>
           </Card>
-        </Col>
-      </Row>
-      <RecentTransactions />
-    </>
-  );
+        </Col>*/
 };
 
 export default HomePage;

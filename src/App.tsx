@@ -19,16 +19,16 @@ import LargeTransactionsPage from "pages/LargeTransactions";
 import KnownAccountsPage from "pages/KnownAccounts";
 import AccountPage from "pages/Account";
 import BlockPage from "pages/Block";
-import NewsPage from "pages/News";
+//import NewsPage from "pages/News";
 import NodeStatusPage from "pages/NodeStatus";
 import NetworkStatusPage from "pages/NetworkStatus";
-import WhatIsNanoPage from "pages/WhatIsNano";
+//import WhatIsNanoPage from "pages/WhatIsNano";
 import PreferencesPage from "pages/Preferences";
 import BookmarksPage from "pages/Bookmarks";
-import NanoQuakeJSPage from "pages/NanoQuakeJS";
-import NanoBrowserQuestPage from "pages/NanoBrowserQuest";
-import TreasureHunt from "pages/TreasureHunt";
-import StatisticsSocial from "pages/Statistics/Social";
+//import NanoQuakeJSPage from "pages/NanoQuakeJS";
+//import NanoBrowserQuestPage from "pages/NanoBrowserQuest";
+//import TreasureHunt from "pages/TreasureHunt";
+//import StatisticsSocial from "pages/Statistics/Social";
 import "components/utils/analytics";
 
 import "antd/dist/antd.css";
@@ -82,16 +82,10 @@ const App: React.FC = () => {
               component={AccountPage}
             />
             <Route path="/block/:block?" component={BlockPage} />
-            <Route path="/news/:feed?" component={NewsPage} />
             <Route path="/node-status" component={NodeStatusPage} />
             <Route path="/network-status" component={NetworkStatusPage} />
-            <Route path="/what-is-nano" component={WhatIsNanoPage} />
             <Route path="/preferences" component={PreferencesPage} />
             <Route path="/bookmarks" component={BookmarksPage} />
-            <Route path="/nanoquakejs" component={NanoQuakeJSPage} />
-            <Route path="/nanobrowserquest" component={NanoBrowserQuestPage} />
-            <Route path="/treasure-hunt/:account?" component={TreasureHunt} />
-            <Route path="/statistics/social" component={StatisticsSocial} />
           </Switch>
         </Content>
         <AppFooter />

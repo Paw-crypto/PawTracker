@@ -12,6 +12,13 @@ const Banner: React.FC = () => {
   const { t } = useTranslation();
   const { theme } = React.useContext(PreferencesContext);
 
+	/*
+		linear-gradient(rgba(21, 172, 178, 1), rgba(15, 103, 65, 0.15)),
+		backgroundImage: "url(/home-banner.jpg)",
+		backgroundPosition: "center center",
+		backgroundAttachment: "fixed",
+	
+	*/
   return (
     <div
       className="home-banner"
@@ -21,8 +28,8 @@ const Banner: React.FC = () => {
         alignItems: "center",
         flexDirection: "column",
         margin: "-12px -12px 12px -12px",
-        backgroundColor: theme === Theme.DARK ? "#121212" : "#4A90E2",
-        padding: "40px 0",
+        background: theme === Theme.DARK ? "#00c3b6" : "#00c3b6",
+        padding: "40px 0"
       }}
     >
       <div
@@ -61,9 +68,9 @@ const Banner: React.FC = () => {
       </div>
 
       <Space size={[6, 12]} wrap style={{ justifyContent: "center" }}>
-        <Link to={"/what-is-nano"}>
+        <a href="http://paw.digital">
           <Button ghost>{t("menu.whatIsNano")}</Button>
-        </Link>
+        </a>
      </Space>
     </div>
   );

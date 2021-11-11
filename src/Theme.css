@@ -12,14 +12,17 @@ body .theme-dark {
 }
 
 .theme-light .ant-layout-header {
-  background: #fff;
+  background: #00c3b6;
 }
 
 .theme-light .app-sub-header {
   background: #fff;
   border-top: solid 1px #f0f0f0;
 }
-
+.theme-light .ant-menu-horizontal>.ant-menu-submenu .ant-menu-submenu-title:hover, .theme-light .ant-menu-horizontal>.ant-menu-submenu .ant-menu-submenu-title
+{
+	color: #000;
+}
 .theme-dark .app-sub-header {
   color: #e1e1e1;
   background: #1e1e1e;
@@ -40,7 +43,7 @@ body .theme-dark {
 }
 
 .ant-menu-light {
-  background: #fff;
+  background: transparent;
 }
 
 .theme-dark .ant-layout-header {

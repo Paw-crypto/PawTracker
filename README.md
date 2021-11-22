@@ -1,6 +1,6 @@
 <hr />
 <div align="center">
-    <img src="public/pawtracker.png" alt="Logo" width='150px' height='auto'/>
+    <img src="public/pawtracker.png" alt="Logo" width='100px' height='auto'/>
 </div>
 <hr />
 

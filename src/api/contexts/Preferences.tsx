@@ -121,7 +121,7 @@ export const PreferencesContext = React.createContext<Preferences>({
   filterTransactions: false,
   filterTransactionsRange: DEFAULT_UNITS,
   disableLiveTransactions: false,
-  natricons: false,
+  natricons: true,
   nanoQuakeJSUsername: null,
   nanoQuakeJSAccount: null,
   nanoQuakeJSServer: null,
@@ -168,7 +168,7 @@ const Provider: React.FC = ({ children }) => {
     ),
   );
   const [natricons, setNatricons] = React.useState<boolean>(
-    toBoolean(localStorage.getItem(LOCALSTORAGE_KEYS.NATRICONS)),
+    localStorage.getItem(LOCALSTORAGE_KEYS.NATRICONS) != null ? toBoolean(localStorage.getItem(LOCALSTORAGE_KEYS.NATRICONS)) : true,
   );
   const [nanoQuakeJSUsername, setNanoQuakeJSUsername] = React.useState(
     localStorage.getItem(LOCALSTORAGE_KEYS.NANOQUAKEJS_USERNAME),

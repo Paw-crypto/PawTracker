@@ -119,17 +119,7 @@ const DeveloperFund: React.FC = () => {
                 totalAccounts: data.length,
               })}
               <br />
-              <a
-                style={{
-                  display: "inline-block",
-                  marginTop: "12px",
-                }}
-                href={DEVELOPER_FUND_CHANGE_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {t("common.continueReading")}
-              </a>
+             
             </div>
 
             <Row gutter={6}>
@@ -218,15 +208,6 @@ const DeveloperFund: React.FC = () => {
                   to={`/block/${ORIGINAL_DEVELOPER_FUND_BURN_BLOCK}`}
                 ></Link>
               </Trans>
-              <br />
-              <a
-                style={{ display: "inline-block", marginTop: "12px" }}
-                href={DEVELOPER_FUND_ORIGINAL_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {t("common.continueReading")}
-              </a>
             </div>
 
             <Row gutter={6}>
@@ -247,10 +228,10 @@ const DeveloperFund: React.FC = () => {
                 {t("common.balance")}
               </Col>
               <Col xs={24} sm={18}>
-                {new BigNumber("7000000").toFormat()} PAW
+                {new BigNumber("34028236692").toFormat()} PAW
                 <br />
                 {t("pages.developerFund.percentOfTotal", {
-                  percent: new BigNumber(7000000 * 100)
+                  percent: new BigNumber(34028236692 * 100)
                     .dividedBy(availableSupply)
                     .toFormat(2),
                 })}

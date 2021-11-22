@@ -77,10 +77,6 @@ const AppHeader: React.FC = () => {
                   {t("menu.developerFund")}
                   <Link to="/developer-fund" />
                 </Menu.Item>
-                <Menu.Item key="known-accounts">
-                  {t("menu.knownAccounts")}
-                  <Link to="/known-accounts" />
-                </Menu.Item>
                 <Menu.Item key="large-transactions">
                   {t("menu.largeTransactions")}
                   <Link to="/large-transactions" />
@@ -88,14 +84,6 @@ const AppHeader: React.FC = () => {
                 <Menu.Item key="distribution">
                   {t("menu.distribution")}
                   <Link to="/distribution" />
-                </Menu.Item>
-                <Menu.Item key="exchange-tracker">
-                  {t("menu.exchangeTracker")}
-                  <Link to="/exchange-tracker" />
-                </Menu.Item>
-                <Menu.Item key="faucets">
-                  {t("menu.faucets")}
-                  <Link to="/faucets" />
                 </Menu.Item>
               </SubMenu>
 
@@ -111,10 +99,12 @@ const AppHeader: React.FC = () => {
                   {t("menu.nodeStatus")}
                   <Link to="/node-status" />
                 </Menu.Item>
+				/*
                 <Menu.Item key="network-status">
                   {t("menu.networkStatus")}
                   <Link to="/network-status" />
                 </Menu.Item>
+				*/
               </SubMenu>
             </Menu>
           </Col>
@@ -155,5 +145,18 @@ const AppHeader: React.FC = () => {
     </>
   );
 };
-
+/*
+                <Menu.Item key="known-accounts">
+                  {t("menu.knownAccounts")}
+                  <Link to="/known-accounts" />
+                </Menu.Item>
+                <Menu.Item key="exchange-tracker">
+                  {t("menu.exchangeTracker")}
+                  <Link to="/exchange-tracker" />
+                </Menu.Item>
+                <Menu.Item key="faucets">
+                  {t("menu.faucets")}
+                  <Link to="/faucets" />
+                </Menu.Item>*/
+				
 export default AppHeader;

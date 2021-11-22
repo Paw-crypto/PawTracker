@@ -69,10 +69,10 @@ const App: React.FC = () => {
             <Route exact path="/" component={HomePage} />
             <Route path="/representatives" component={RepresentativesPage} />
             <Route exact path="/developer-fund" component={DeveloperFundPage} />
-            <Route path="/known-accounts" component={KnownAccountsPage} />
+            //<Route path="/known-accounts" component={KnownAccountsPage} />
+            //<Route path="/exchange-tracker" component={ExchangeTrackerPage} />
+            //<Route path="/faucets" component={FaucetsPage} />
             <Route path="/distribution" component={DistributionPage} />
-            <Route path="/exchange-tracker" component={ExchangeTrackerPage} />
-            <Route path="/faucets" component={FaucetsPage} />
             <Route
               path="/large-transactions/:sortBy?"
               component={LargeTransactionsPage}

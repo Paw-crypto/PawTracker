@@ -1,14 +1,14 @@
 {
-  "GENESIS_ACCOUNT": "paw_3g65bn363dp7kf141tpefjzygaajwxa4mgwo3uqbskxyjyfbd9jhnzdb4iit",
+  "GENESIS_ACCOUNT": "paw_3yyz45ztct47x4ai3onfbkkuorzpdtnb15cmnhu8fhosnxrgci8c5xp8xbf6",
   "BURN_ACCOUNT": "paw_1111111111111111111111111111111111111111111111111111hifc8npp",
   "NANOLOOKER": "paw_1ookerz3adg5rxc4zwwoshim5yyyihf6dpogjihwwq6ksjpq7ea4fuam5mmc",
-  "ORIGINAL_DEVELOPER_FUND_ACCOUNT": "paw_1ipx847tk8o46pwxt5qjdbncjqcbwcc1rrmqnkztrfjy5k7z4imsrata9est",
-  "ORIGINAL_DEVELOPER_FUND_BLOCK": "8F02D66117CAC96AD0C66DB2DD583F8452D1CCE979FAEA5C72E4937F33F4ADA4",
+  "ORIGINAL_DEVELOPER_FUND_ACCOUNT": "paw_1re5oi6cxgzj3rqf9cj8a7nbnqhiiie5kyknjrg8es845n8p1tckfpuu8b56",
+  "ORIGINAL_DEVELOPER_FUND_BLOCK": "C5AAEF346C418296CFDAB6A7AFBC74E6D36248228738D114D422DE53BC3F00AA",
   "ORIGINAL_DEVELOPER_FUND_BURN_BLOCK": "ECCB8CB65CD3106EDA8CE9AA893FEAD497A91BCA903890CBD7A5C59F06AB9113",
   "KNOWN_EXCHANGE_ACCOUNTS": [
     "paw_3g65bn363dp7kf141tpefjzygaajwxa4mgwo3uqbskxyjyfbd9jhnzdb4iit"
   ],
   "DEVELOPER_FUND_ACCOUNTS": [
-    "paw_3hsss3n1idbotapj678rx36xsc6fxsi1furuzi39p9d34gdjfy1o9fhmummp"
+    "paw_1re5oi6cxgzj3rqf9cj8a7nbnqhiiie5kyknjrg8es845n8p1tckfpuu8b56"
   ]
 }

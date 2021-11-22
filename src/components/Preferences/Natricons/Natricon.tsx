@@ -8,8 +8,8 @@ interface Props {
 export const Natricon: React.FC<Props> = ({ account, style }) =>
   account ? (
     <img
-      alt="Natricon"
-      src={`https://natricon.com/api/v1/nano?address=${account}&svc=nanolooker`}
+      alt="Pawnimal"
+      src={`https://pawnimal.paw.digital/api/v1/nano?address=${account}&svc=nanolooker`}
       style={style}
     />
   ) : null;

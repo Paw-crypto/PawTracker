@@ -121,7 +121,7 @@ const useSocket = () => {
     isForcedClosed = false;
     setIsConnected(false);
 
-    ws = new WebSocket(websocketDomain || "wss://ws.paw.digital");
+    ws = new WebSocket(websocketDomain || "wss://tracker.paw.digital/ws");
 
     ws.onopen = () => {
       setIsError(false);

@@ -6,7 +6,7 @@
 
 ## PawTracker
 
-The perfect tool for PAW to check PAW transactions.
+The perfect tool for PAW to check $PAW transactions.
 
 ## What is Paw?
 

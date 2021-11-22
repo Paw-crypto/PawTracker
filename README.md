@@ -4,6 +4,10 @@
 </div>
 <hr />
 
+## PawTracker
+
+The perfect tool for PAW to check PAW transactions.
+
 ## What is Paw?
 
 PAW is a animal themed digital currency. More information is available over on the official [Paw repository](https://github.com/paw-digital/paw-node).

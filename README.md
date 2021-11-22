@@ -23,6 +23,6 @@ PAW is a animal themed digital currency. More information is available over on t
 
 Special thanks to the following!
 
-- [nanolooker] (https://github.com/running-coder/nanolooker) - The original one
+- [NanoLooker](https://github.com/running-coder/nanolooker) - The original one
 - [My Nano Ninja](https://mynano.ninja/)
 - [NanoCrawler](https://nanocrawler.cc/)

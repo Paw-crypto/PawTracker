@@ -1,7 +1,7 @@
 [
   {
     "alias": "Genesis",
-    "account": "paw_3g65bn363dp7kf141tpefjzygaajwxa4mgwo3uqbskxyjyfbd9jhnzdb4iit"
+    "account": "paw_3yyz45ztct47x4ai3onfbkkuorzpdtnb15cmnhu8fhosnxrgci8c5xp8xbf6"
   },
   {
     "alias": "Distribution fund #1",
@@ -34,5 +34,13 @@
   {
     "alias": "Distribution fund #8",
     "account": "paw_1fj6egy61fdii8cg48hyeeq54qkdnocydpbqk7rzpe8h7ibsjk8nutt5o3tb"
+  },
+  {
+    "alias": "Developer fund",
+    "account": "paw_1re5oi6cxgzj3rqf9cj8a7nbnqhiiie5kyknjrg8es845n8p1tckfpuu8b56"
+  },
+  {
+    "alias": "Expense fund",
+    "account": "paw_1ggha4iy5im5aa34te47bmtn1hmfbaa1f3qkbfrtnfstqnjwenh3btdkuuyf"
   }
 ]

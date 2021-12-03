@@ -5,10 +5,17 @@
   "ORIGINAL_DEVELOPER_FUND_ACCOUNT": "paw_1re5oi6cxgzj3rqf9cj8a7nbnqhiiie5kyknjrg8es845n8p1tckfpuu8b56",
   "ORIGINAL_DEVELOPER_FUND_BLOCK": "C5AAEF346C418296CFDAB6A7AFBC74E6D36248228738D114D422DE53BC3F00AA",
   "ORIGINAL_DEVELOPER_FUND_BURN_BLOCK": "ECCB8CB65CD3106EDA8CE9AA893FEAD497A91BCA903890CBD7A5C59F06AB9113",
-  "KNOWN_EXCHANGE_ACCOUNTS": [
-    "paw_3g65bn363dp7kf141tpefjzygaajwxa4mgwo3uqbskxyjyfbd9jhnzdb4iit"
-  ],
-  "DEVELOPER_FUND_ACCOUNTS": [
-    "paw_1re5oi6cxgzj3rqf9cj8a7nbnqhiiie5kyknjrg8es845n8p1tckfpuu8b56"
+  "ORIGINAL_EXPENSE_FUND_ACCOUNT": "paw_1ggha4iy5im5aa34te47bmtn1hmfbaa1f3qkbfrtnfstqnjwenh3btdkuuyf",
+  "ORIGINAL_EXPENSE_FUND_BLOCK": "94DC2CB4A7B3F0CDA8C97ABCC9171BC159F520AE7A1C5173A51B15539C7B684D",
+  "KNOWN_EXCHANGE_ACCOUNTS": [ ],
+  "POG_FUND_ACCOUNTS": [
+    "paw_176got1nmmiiads9etonxugs3k8jqriep3cwyc8urc8egkaooh3w7ncjg4wr",
+    "paw_18eche7ufa7b8z8e3aci1gqz79gkugea4hxi3ci3zfr586t8hnk81n9ko9pk",
+    "paw_3qnosbjb1t1e7jxe3xuhy68kzctqcgkdu3ium5sk4ptaut7cbqphbd4whnxc",
+    "paw_3e443j3cj8mzrp9fcxho9wquygz98h53wexxmsaexh57w3ht4zpcpzzy13n3",
+    "paw_31t4m1ioogtk6kw1g98wf99dr4id4qajgok37iujq4qkwpqday5c1xhai4m4",
+    "paw_3emytdw99gtpgt8chjwj71crpmmm59bccsnzcunyw97tih3ajp3duaq39845",
+    "paw_3czg5xi369uxfybq55okc4ca7eeam5ik5mmc6hyfx9mwgjp383tsaukc7xpq",
+    "paw_1fj6egy61fdii8cg48hyeeq54qkdnocydpbqk7rzpe8h7ibsjk8nutt5o3tb"
   ]
 }

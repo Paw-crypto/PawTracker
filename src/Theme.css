@@ -19,9 +19,13 @@ body .theme-dark {
   background: #fff;
   border-top: solid 1px #f0f0f0;
 }
+.theme-light .ant-menu-horizontal>.ant-menu-submenu .ant-menu-submenu-title
+{
+	color: rgba(255,255,255,1);
+}
 .theme-light .ant-menu-horizontal>.ant-menu-submenu .ant-menu-submenu-title:hover, .theme-light .ant-menu-horizontal>.ant-menu-submenu .ant-menu-submenu-title
 {
-	color: #000;
+	color: rgba(255,255,255,0.75);
 }
 .theme-dark .app-sub-header {
   color: #e1e1e1;

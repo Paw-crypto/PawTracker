@@ -4,7 +4,7 @@ import { Col, Row, Switch, Typography } from "antd";
 import { CheckOutlined, CloseOutlined } from "@ant-design/icons";
 import { PreferencesContext } from "api/contexts/Preferences";
 import { Natricon } from "components/Preferences/Natricons/Natricon";
-import { DEVELOPER_FUND_ACCOUNTS } from "knownAccounts.json";
+import { ORIGINAL_DEVELOPER_FUND_ACCOUNT } from "knownAccounts.json";
 
 const { Text } = Typography;
 
@@ -14,11 +14,7 @@ interface Props {
 
 const NatriconsPreferences: React.FC<Props> = ({ isDetailed }) => {
   const { t } = useTranslation();
-  const [account] = React.useState(
-    DEVELOPER_FUND_ACCOUNTS[
-      Math.floor(Math.random() * DEVELOPER_FUND_ACCOUNTS.length)
-    ],
-  );
+  const [account] = [ORIGINAL_DEVELOPER_FUND_ACCOUNT];
   const { natricons, setNatricons } = React.useContext(PreferencesContext);
 
   return (

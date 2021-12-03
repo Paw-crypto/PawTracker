@@ -80,7 +80,7 @@ const Provider: React.FC = ({ children }) => {
     clearTimeout(pollMarketStatisticsTimeout);
     let isError = false;
 
-    /*setIsLoading(true);
+    setIsLoading(true);
     try {
       const query = qs.stringify(
         { fiat, cryptocurrency: !!cryptocurrency?.length },
@@ -106,7 +106,7 @@ const Provider: React.FC = ({ children }) => {
         getMarketStatistics(fiat);
       },
       isError ? 5000 : 25000,
-    );*/
+    );
     setIsInitialLoading(false);
     setIsLoading(false);
   };

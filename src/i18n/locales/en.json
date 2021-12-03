@@ -61,7 +61,7 @@
   },
   "tooltips": {
     "avgConfirmationTime": "The average confirmation time is calculated locally on the node. If the node is restarted or in degraded condition, the average confirmation time might be higher than the rest of the network.",
-    "circulatingSupply": "The amount of coins that are in circulation. Paw is fully distributed, the supply will never increase.",
+    "circulatingSupply": "The amount of coins that are in circulation.",
     "transactionFees": "Unlike any other cryptocurrencies Paw transactions are fee-less, forever.",
     "bitcoinTransactionFees": "This value have no impact on the PAW network, it is solely for comparison purpose. It represents the sum of transaction fees the Bitcoin users are paying to the miners to get their transaction accepted on the Bitcoin network.",
     "cps": "Confirmations Per Second. The rate of confirmed blocks (send or receive) on the PAW network. It is sampled over the last minute locally on the node. If the node is restarted or in a degraded condition, the CPS value might be higher or lower than the actual average on the network while the node syncs and reconnects with the other nodes.",
@@ -118,7 +118,7 @@
   "menu": {
     "explore": "Explore",
     "representatives": "Tribes",
-    "developerFund": "Developer Fund",
+    "developerFund": "Genesis Distribution",
     "knownAccounts": "Known Accounts",
     "largeTransactions": "Large Transactions",
     "distribution": "Distribution",
@@ -225,13 +225,19 @@
       "description": "Faucets allows you to claim small amounts of PAW for free. These faucets are for you to experience how easy it is to send and receive PAW across the world instantly on a decentralized network."
     },
     "developerFund": {
-      "description": "As of 11/04/2021 the developer fund has been split up into {{totalAccounts}} accounts following a review of internal security policy and tribe voting weights.",
+      "description": "Overview over the current Proof-Of-Growth fund.",
       "lastTransaction": "Last transaction",
       "allTransactions": "View all send transactions",
+      "originalPOGBalance": "Original POG Balance",
+      "originalPOGFund": "Proof-Of-Growth Fund",
       "originalDeveloperFund": "Original Developer Fund",
-      "originalDeveloperFundDescription": "The distribution of Paw is performed through Proof-Of-Growth it started in November 2021.",
-      "totalAccounts": "{{totalAccounts}} Total Accounts",
-      "percentOfTotal": "{{percent}}%  of the circulating supply"
+      "originalDeveloperFundDescription": "Used to pay for development. Distribution of Paw is performed monthly and split among all team members. Initial core members received 1.5% each.",
+      "originalExpenseFund": "Original Expense Fund",
+      "originalExpenseFundDescription": "The expense fund of Paw is used to pay for any occuring bills, for example server listing fees, server bills etc.",
+      "totalAccounts": "{{totalAccounts}} Proof-Of-Growth Accounts",
+      "percentOfTotalExpense": "{{percent}}%  of the circulating supply",
+      "percentOfTotalDev": "{{percent}}%  of the circulating supply",
+      "percentOfTotalPOG": "{{percent}}%  of the circulating supply"
     },
     "knownAccounts": {
       "totalAccounts": "{{totalAccounts}} Total Known Accounts"

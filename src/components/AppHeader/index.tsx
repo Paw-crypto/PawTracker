@@ -99,12 +99,6 @@ const AppHeader: React.FC = () => {
                   {t("menu.nodeStatus")}
                   <Link to="/node-status" />
                 </Menu.Item>
-				/*
-                <Menu.Item key="network-status">
-                  {t("menu.networkStatus")}
-                  <Link to="/network-status" />
-                </Menu.Item>
-				*/
               </SubMenu>
             </Menu>
           </Col>
@@ -126,6 +120,15 @@ const AppHeader: React.FC = () => {
 		  marginTop: "72px"
         }}
       >
+        <div>
+          <Preferences />
+        </div>
+      </div>
+    </>
+  );
+};
+/*
+	  
         <div
           className="price-list"
           style={{
@@ -138,14 +141,6 @@ const AppHeader: React.FC = () => {
         >
           <Price />
         </div>
-        <div>
-          <Preferences />
-        </div>
-      </div>
-    </>
-  );
-};
-/*
                 <Menu.Item key="known-accounts">
                   {t("menu.knownAccounts")}
                   <Link to="/known-accounts" />

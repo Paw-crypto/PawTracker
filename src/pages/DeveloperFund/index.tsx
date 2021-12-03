@@ -21,10 +21,12 @@ import LoadingStatistic from "components/LoadingStatistic";
 import { rawToRai, timestampToDate } from "components/utils";
 import {
   GENESIS_ACCOUNT,
-  DEVELOPER_FUND_ACCOUNTS,
+  POG_FUND_ACCOUNTS,
   ORIGINAL_DEVELOPER_FUND_BLOCK,
   ORIGINAL_DEVELOPER_FUND_BURN_BLOCK,
   ORIGINAL_DEVELOPER_FUND_ACCOUNT,
+  ORIGINAL_EXPENSE_FUND_ACCOUNT,
+  ORIGINAL_EXPENSE_FUND_BLOCK
 } from "../../knownAccounts.json";
 
 const DEVELOPER_FUND_CHANGE_LINK =
@@ -50,7 +52,7 @@ const DeveloperFund: React.FC = () => {
   const {
     accountsBalances,
     isLoading: isAccountsBalancesLoading,
-  } = useAccountsBalances(DEVELOPER_FUND_ACCOUNTS);
+  } = useAccountsBalances(POG_FUND_ACCOUNTS);
   const { availableSupply } = useAvailableSupply();
   const { developerFundTransactions } = useDeveloperAccountFund();
   const isSmallAndLower = !useMediaQuery("(min-width: 576px)");
@@ -102,11 +104,11 @@ const DeveloperFund: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Nano {t("menu.developerFund")}</title>
+        <title>PAW {t("menu.developerFund")}</title>
       </Helmet>
       <Row gutter={[12, 0]}>
         <Col xs={24} lg={12}>
-          <Title level={3}>{t("menu.developerFund")}</Title>
+          <Title level={3}>{t("pages.developerFund.originalPOGFund")}</Title>
           <Card size="small" bordered={false} className="detail-layout">
             <div
               className="divider"
@@ -135,6 +137,27 @@ const DeveloperFund: React.FC = () => {
                 <Skeleton {...skeletonProps}>
                   {`${CurrencySymbol?.[fiat]}${fiatBalance} / ${btcBalance} BTC`}
                 </Skeleton>
+				<br />
+                {t("pages.developerFund.percentOfTotalPOG", {
+                  percent: new BigNumber(totalBalance * 100)
+                    .dividedBy(availableSupply)
+                    .toFormat(2),
+                })}
+              </Col>
+            </Row>
+			
+            <Row gutter={6}>
+              <Col xs={24} sm={6}>
+                {t("pages.developerFund.originalPOGBalance")}
+              </Col>
+              <Col xs={24} sm={18}>
+                {new BigNumber("272225893536").toFormat()} PAW
+                <br />
+                {t("pages.developerFund.percentOfTotalPOG", {
+                  percent: new BigNumber(272225893536 * 100)
+                    .dividedBy(availableSupply)
+                    .toFormat(2),
+                })}
               </Col>
             </Row>
 
@@ -195,20 +218,20 @@ const DeveloperFund: React.FC = () => {
             {t("pages.developerFund.originalDeveloperFund")}
           </Title>
           <Card size="small" bordered={false} className="detail-layout">
-            <div
-              className="divider"
-              style={{
-                paddingBottom: "6px",
-                marginBottom: "12px",
-              }}
-            >
-              <Trans i18nKey="pages.developerFund.originalDeveloperFundDescription">
-                <Link to={`/account/${GENESIS_ACCOUNT}`}>Genesis</Link>
-                <Link
-                  to={`/block/${ORIGINAL_DEVELOPER_FUND_BURN_BLOCK}`}
-                ></Link>
-              </Trans>
-            </div>
+			<div
+			  className="divider"
+			  style={{
+				paddingBottom: "6px",
+				marginBottom: "12px",
+			  }}
+			>
+			  <Trans i18nKey="pages.developerFund.originalDeveloperFundDescription">
+				<Link to={`/account/${GENESIS_ACCOUNT}`}>Genesis Account</Link>
+				<Link
+				  to={`/block/${ORIGINAL_DEVELOPER_FUND_BURN_BLOCK}`}
+				></Link>
+			  </Trans>
+			</div>
 
             <Row gutter={6}>
               <Col xs={24} sm={6}>
@@ -230,7 +253,7 @@ const DeveloperFund: React.FC = () => {
               <Col xs={24} sm={18}>
                 {new BigNumber("34028236692").toFormat()} PAW
                 <br />
-                {t("pages.developerFund.percentOfTotal", {
+                {t("pages.developerFund.percentOfTotalDev", {
                   percent: new BigNumber(34028236692 * 100)
                     .dividedBy(availableSupply)
                     .toFormat(2),
@@ -247,6 +270,67 @@ const DeveloperFund: React.FC = () => {
                   className="break-word"
                 >
                   {ORIGINAL_DEVELOPER_FUND_BLOCK}
+                </Link>
+              </Col>
+            </Row>
+          </Card>
+		  
+          <Title level={3}>
+            {t("pages.developerFund.originalExpenseFund")}
+          </Title>
+          <Card size="small" bordered={false} className="detail-layout">
+            <div
+              className="divider"
+              style={{
+                paddingBottom: "6px",
+                marginBottom: "12px",
+              }}
+            >
+              <Trans i18nKey="pages.developerFund.originalExpenseFundDescription">
+                <Link to={`/account/${GENESIS_ACCOUNT}`}>Genesis</Link>
+                <Link
+                  to={`/block/${ORIGINAL_DEVELOPER_FUND_BURN_BLOCK}`}
+                ></Link>
+              </Trans>
+            </div>
+
+            <Row gutter={6}>
+              <Col xs={24} sm={6}>
+                {t("common.account")}
+              </Col>
+              <Col xs={24} sm={18}>
+                <Link
+                  to={`/account/${ORIGINAL_EXPENSE_FUND_ACCOUNT}`}
+                  className="break-word"
+                >
+                  {ORIGINAL_EXPENSE_FUND_ACCOUNT}
+                </Link>
+              </Col>
+            </Row>
+            <Row gutter={6}>
+              <Col xs={24} sm={6}>
+                {t("common.balance")}
+              </Col>
+              <Col xs={24} sm={18}>
+                {new BigNumber("34028236692").toFormat()} PAW
+                <br />
+                {t("pages.developerFund.percentOfTotalExpense", {
+                  percent: new BigNumber(34028236692 * 100)
+                    .dividedBy(availableSupply)
+                    .toFormat(2),
+                })}
+              </Col>
+            </Row>
+            <Row gutter={6}>
+              <Col xs={24} sm={6}>
+                {t("common.block")}
+              </Col>
+              <Col xs={24} sm={18}>
+                <Link
+                  to={`/block/${ORIGINAL_EXPENSE_FUND_BLOCK}`}
+                  className="break-word"
+                >
+                  {ORIGINAL_EXPENSE_FUND_BLOCK}
                 </Link>
               </Col>
             </Row>

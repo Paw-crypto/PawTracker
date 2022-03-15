@@ -32,6 +32,9 @@ const distributionMap = [
   "100K - <1M",
   "1M - <10M",
   "10M - <100M",
+  "100M - <1B",
+  "1B - <10B",
+  "10B - <100B",
 ];
 
 let distributionChart: any = null;
@@ -272,9 +275,11 @@ const Distribution: React.FC = () => {
 
       <RichList />
 
-      <DormantFunds data={data?.dormantFunds} />
     </>
   );
 };
 
+/* 
+      <DormantFunds data={data?.dormantFunds} />
+	  */
 export default Distribution;

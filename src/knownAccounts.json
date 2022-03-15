@@ -1,13 +1,20 @@
 {
   "GENESIS_ACCOUNT": "paw_3yyz45ztct47x4ai3onfbkkuorzpdtnb15cmnhu8fhosnxrgci8c5xp8xbf6",
-  "BURN_ACCOUNT": "paw_1111111111111111111111111111111111111111111111111111hifc8npp",
+  "BURN_ACCOUNT": "paw_1goodbye11111111111111111111111111111111111111111111icwgd7tn",
   "NANOLOOKER": "paw_1ookerz3adg5rxc4zwwoshim5yyyihf6dpogjihwwq6ksjpq7ea4fuam5mmc",
   "ORIGINAL_DEVELOPER_FUND_ACCOUNT": "paw_1re5oi6cxgzj3rqf9cj8a7nbnqhiiie5kyknjrg8es845n8p1tckfpuu8b56",
   "ORIGINAL_DEVELOPER_FUND_BLOCK": "C5AAEF346C418296CFDAB6A7AFBC74E6D36248228738D114D422DE53BC3F00AA",
   "ORIGINAL_DEVELOPER_FUND_BURN_BLOCK": "ECCB8CB65CD3106EDA8CE9AA893FEAD497A91BCA903890CBD7A5C59F06AB9113",
   "ORIGINAL_EXPENSE_FUND_ACCOUNT": "paw_1ggha4iy5im5aa34te47bmtn1hmfbaa1f3qkbfrtnfstqnjwenh3btdkuuyf",
   "ORIGINAL_EXPENSE_FUND_BLOCK": "94DC2CB4A7B3F0CDA8C97ABCC9171BC159F520AE7A1C5173A51B15539C7B684D",
-  "KNOWN_EXCHANGE_ACCOUNTS": [ ],
+  "KNOWN_EXCHANGE_ACCOUNTS": [ "paw_13wemmuc616hqtbrhnxrato7ruit799owmnwpady8cgyn845sipmy9bys8rx" ],
+  "CHARITY_ACCOUNT": "paw_3k7ax6z5f9dgh6oo5c54ebzcoz3r8m3dnxnb3h6syc8h3w1jy6owq1kkdktp",
+  "GAME_ACCOUNT": "paw_3xb4y7j4ojr4ebcbcsfj6op6fj65pauik7rircuishggefh6rmtr7f1p6n9s",
+  "STAKE_DISTRIBUTION_ACCOUNT": "paw_1m1sozq9irc9w9cycwi8yok7i7kwky5tc9doathtz1cqxj8ec5kskhemj6im",
+  "ACTIVE_DISTRIBUTION_ACCOUNT": "paw_1qfe5u7bcm7qrpp9rhk9p7wyqw316om1ts7s4gm466nwy6ueniik1gzwcno8",
+  "TWITTER_TIP_BOT": "paw_3harnk9ogeiw7xnnszekasgbbx3xi7yocrzymrr7xqkmrmqbq68pof1aju9t",
+  "PAWQUEST_SHOOTER": "paw_3n7k4zxf8qif4f9k61if6oimsfdiobfytynmaagx95fwzdcgbct7i3xmndba",
+  "PANDA_FAUCET_GAME": "paw_3hufk8opwpwsn5tp68ohs6zjiokx3rydnp8wijqpi19tnfiqupi7t1jdcd5y",
   "POG_FUND_ACCOUNTS": [
     "paw_176got1nmmiiads9etonxugs3k8jqriep3cwyc8urc8egkaooh3w7ncjg4wr",
     "paw_18eche7ufa7b8z8e3aci1gqz79gkugea4hxi3ci3zfr586t8hnk81n9ko9pk",
@@ -16,6 +23,9 @@
     "paw_31t4m1ioogtk6kw1g98wf99dr4id4qajgok37iujq4qkwpqday5c1xhai4m4",
     "paw_3emytdw99gtpgt8chjwj71crpmmm59bccsnzcunyw97tih3ajp3duaq39845",
     "paw_3czg5xi369uxfybq55okc4ca7eeam5ik5mmc6hyfx9mwgjp383tsaukc7xpq",
-    "paw_1fj6egy61fdii8cg48hyeeq54qkdnocydpbqk7rzpe8h7ibsjk8nutt5o3tb"
+    "paw_1fj6egy61fdii8cg48hyeeq54qkdnocydpbqk7rzpe8h7ibsjk8nutt5o3tb",
+	"paw_19ap3fhycjro954pucsdkq7ux4dn95e9yxu9yc3z9aaj3h6j1z8th6asa8jk",
+	"paw_3czw46c6muaaswpb9crxz9z3seoku4muq3816gmbd6g4q91otou1rr8e9jaq",
+	"paw_3bd9iw1py5n9aez8cn86qxtxh45j65jgdar8ow7cqsg87sd4gy5jmy96ob4p"
   ]
 }

@@ -235,9 +235,9 @@
       "originalExpenseFund": "Original Expense Fund",
       "originalExpenseFundDescription": "The expense fund of Paw is used to pay for any occuring bills, for example server listing fees, server bills etc.",
       "totalAccounts": "{{totalAccounts}} Proof-Of-Growth Accounts",
-      "percentOfTotalExpense": "{{percent}}%  of the circulating supply",
-      "percentOfTotalDev": "{{percent}}%  of the circulating supply",
-      "percentOfTotalPOG": "{{percent}}%  of the circulating supply"
+      "percentOfTotalExpense": "{{percent}}%  of the total supply",
+      "percentOfTotalDev": "{{percent}}%  of the total supply",
+      "percentOfTotalPOG": "{{percent}}%  of the total supply"
     },
     "knownAccounts": {
       "totalAccounts": "{{totalAccounts}} Total Known Accounts"

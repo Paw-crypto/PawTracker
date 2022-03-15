@@ -16,7 +16,7 @@ const extraKnownAccounts = require("./knownAccounts.json");
 const faucetAccounts = require("../../src/pages/Faucets/faucets.json");
 
 const doKnownAccountsCron = async () => {
-  let knownAccounts = uniqBy(extraKnownAccounts.concat(faucetAccounts), "account");
+  let knownAccounts = uniqBy(extraKnownAccounts, "account");
   return knownAccounts;
 };
 

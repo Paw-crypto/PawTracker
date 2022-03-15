@@ -82,7 +82,7 @@ ws.onmessage = msg => {
     accumulatedConfirmations = accumulatedConfirmations + 1;
 
     // 10,000 NANO
-    if (subtype === "send" && amount.length >= 35) {
+    if (subtype === "send" && amount.length >= 32) {//amount.length >= 35) {
       // Adding date because the message doesn't contain one
       message.timestamp = Date.now();
       accumulatedLargeTransactionHashes.push(message);

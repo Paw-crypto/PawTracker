@@ -85,6 +85,10 @@ const AppHeader: React.FC = () => {
                   {t("menu.distribution")}
                   <Link to="/distribution" />
                 </Menu.Item>
+                <Menu.Item key="known-accounts">
+                  {t("menu.knownAccounts")}
+                  <Link to="/known-accounts" />
+                </Menu.Item>
               </SubMenu>
 
               <SubMenu
@@ -141,10 +145,6 @@ const AppHeader: React.FC = () => {
         >
           <Price />
         </div>
-                <Menu.Item key="known-accounts">
-                  {t("menu.knownAccounts")}
-                  <Link to="/known-accounts" />
-                </Menu.Item>
                 <Menu.Item key="exchange-tracker">
                   {t("menu.exchangeTracker")}
                   <Link to="/exchange-tracker" />

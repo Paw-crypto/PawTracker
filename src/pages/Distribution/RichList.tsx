@@ -39,7 +39,8 @@ const RichList: React.FC = () => {
       },
     },
   } = React.useContext(MarketStatisticsContext);
-  const { availableSupply = 123123123 } = useAvailableSupply();
+  //const { availableSupply = 123123123 } = useAvailableSupply();
+  const totalSupply = 340282366920.9385;
   const isSmallAndLower = !useMediaQuery("(min-width: 576px)");
 
   const startIndex = (currentPage - 1) * perPage + 1;
@@ -109,11 +110,11 @@ const RichList: React.FC = () => {
                       display: "block",
                     }}
                   >
-                    {availableSupply && account !== BURN_ACCOUNT
+                    {totalSupply && account !== BURN_ACCOUNT
                       ? `${roundOff(
                           new BigNumber(balance)
                             .times(100)
-                            .dividedBy(availableSupply)
+                            .dividedBy(totalSupply)
                             .toNumber(),
                         )}%`
                       : null}

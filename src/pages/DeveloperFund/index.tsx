@@ -53,7 +53,8 @@ const DeveloperFund: React.FC = () => {
     accountsBalances,
     isLoading: isAccountsBalancesLoading,
   } = useAccountsBalances(POG_FUND_ACCOUNTS);
-  const { availableSupply } = useAvailableSupply();
+  //const { availableSupply } = useAvailableSupply();
+  const totalSupply = 340282366920.9385;
   const { developerFundTransactions } = useDeveloperAccountFund();
   const isSmallAndLower = !useMediaQuery("(min-width: 576px)");
 
@@ -140,7 +141,7 @@ const DeveloperFund: React.FC = () => {
 				<br />
                 {t("pages.developerFund.percentOfTotalPOG", {
                   percent: new BigNumber(totalBalance * 100)
-                    .dividedBy(availableSupply)
+                    .dividedBy(totalSupply)
                     .toFormat(2),
                 })}
               </Col>
@@ -155,62 +156,12 @@ const DeveloperFund: React.FC = () => {
                 <br />
                 {t("pages.developerFund.percentOfTotalPOG", {
                   percent: new BigNumber(272225893536 * 100)
-                    .dividedBy(availableSupply)
+                    .dividedBy(totalSupply)
                     .toFormat(2),
                 })}
               </Col>
             </Row>
 
-            <Row gutter={6}>
-              <Col xs={24} sm={6}>
-                {t("pages.developerFund.lastTransaction")}
-                <Tooltip
-                  placement="right"
-                  title={t("tooltips.lastTransaction", {
-                    totalAccounts: data.length,
-                  })}
-                >
-                  <QuestionCircle />
-                </Tooltip>
-              </Col>
-              <Col xs={24} sm={18}>
-                <Skeleton active loading={!modifiedTimestamp} paragraph={false}>
-                  <TimeAgo datetime={modifiedTimestamp} live={false} /> (
-                  {timestampToDate(modifiedTimestamp)})
-                  <br />
-                </Skeleton>
-                <Skeleton
-                  active
-                  loading={!lastTransactionAmount}
-                  paragraph={false}
-                >
-                  {lastTransactionAmount} PAW
-                  <br />
-                </Skeleton>
-                <Skeleton
-                  active
-                  loading={!lastTransactionHash}
-                  paragraph={false}
-                >
-                  <Link
-                    to={`/block/${lastTransactionHash}`}
-                    className="break-word"
-                  >
-                    {lastTransactionHash}
-                  </Link>
-                  <br />
-                </Skeleton>
-                <Link to={`/developer-fund/transactions`}>
-                  <Button
-                    type="primary"
-                    size="small"
-                    style={{ marginTop: "6px" }}
-                  >
-                    {t("pages.developerFund.allTransactions")}
-                  </Button>
-                </Link>
-              </Col>
-            </Row>
           </Card>
         </Col>
         <Col xs={24} lg={12}>
@@ -255,7 +206,7 @@ const DeveloperFund: React.FC = () => {
                 <br />
                 {t("pages.developerFund.percentOfTotalDev", {
                   percent: new BigNumber(34028236692 * 100)
-                    .dividedBy(availableSupply)
+                    .dividedBy(totalSupply)
                     .toFormat(2),
                 })}
               </Col>
@@ -316,7 +267,7 @@ const DeveloperFund: React.FC = () => {
                 <br />
                 {t("pages.developerFund.percentOfTotalExpense", {
                   percent: new BigNumber(34028236692 * 100)
-                    .dividedBy(availableSupply)
+                    .dividedBy(totalSupply)
                     .toFormat(2),
                 })}
               </Col>
@@ -384,4 +335,57 @@ const DeveloperFund: React.FC = () => {
   );
 };
 
+/*
+
+            <Row gutter={6}>
+              <Col xs={24} sm={6}>
+                {t("pages.developerFund.lastTransaction")}
+                <Tooltip
+                  placement="right"
+                  title={t("tooltips.lastTransaction", {
+                    totalAccounts: data.length,
+                  })}
+                >
+                  <QuestionCircle />
+                </Tooltip>
+              </Col>
+              <Col xs={24} sm={18}>
+                <Skeleton active loading={!modifiedTimestamp} paragraph={false}>
+                  <TimeAgo datetime={modifiedTimestamp} live={false} /> (
+                  {timestampToDate(modifiedTimestamp)})
+                  <br />
+                </Skeleton>
+                <Skeleton
+                  active
+                  loading={!lastTransactionAmount}
+                  paragraph={false}
+                >
+                  {lastTransactionAmount} PAW
+                  <br />
+                </Skeleton>
+                <Skeleton
+                  active
+                  loading={!lastTransactionHash}
+                  paragraph={false}
+                >
+                  <Link
+                    to={`/block/${lastTransactionHash}`}
+                    className="break-word"
+                  >
+                    {lastTransactionHash}
+                  </Link>
+                  <br />
+                </Skeleton>
+                <Link to={`/developer-fund/transactions`}>
+                  <Button
+                    type="primary"
+                    size="small"
+                    style={{ marginTop: "6px" }}
+                  >
+                    {t("pages.developerFund.allTransactions")}
+                  </Button>
+                </Link>
+              </Col>
+            </Row>
+			*/
 export default DeveloperFund;

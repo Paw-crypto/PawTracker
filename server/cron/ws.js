@@ -18,6 +18,8 @@ const {
   TOTAL_VOLUME_COLLECTION,
   TOTAL_VOLUME_24H,
   TOTAL_VOLUME_48H,
+  TOTAL_VOLUME_SENT_COLLECTION,
+  TOTAL_VOLUME_SENT_24H,
   LARGE_TRANSACTIONS,
   CONFIRMATIONS_PER_SECOND,
 } = require("../constants");
@@ -45,6 +47,10 @@ try {
       { expireAfterSeconds: EXPIRE_48H },
     );
     db.collection(TOTAL_VOLUME_COLLECTION).createIndex(
+      { createdAt: 1 },
+      { expireAfterSeconds: EXPIRE_48H },
+    );
+    db.collection(TOTAL_VOLUME_SENT_COLLECTION).createIndex(
       { createdAt: 1 },
       { expireAfterSeconds: EXPIRE_48H },
     );
@@ -146,6 +152,21 @@ cron.schedule("*/10 * * * * *", async () => {
       ])
       .toArray((_err, [{ totalVolume = 0 } = {}] = []) => {
         nodeCache.set(TOTAL_VOLUME_48H, rawToRai(totalVolume));
+      });
+
+    db.collection(TOTAL_VOLUME_SENT_COLLECTION)
+      .aggregate([
+        {
+          $match: {
+            createdAt: {
+              $gte: new Date(Date.now() - EXPIRE_24H * 1000),
+            },
+          },
+        },
+        { $group: { _id: null, totalVolume: { $sum: "$value" } } },
+      ])
+      .toArray((_err, [{ totalVolume = 0 } = {}] = []) => {
+        nodeCache.set(TOTAL_VOLUME_SENT_24H, rawToRai(totalVolume));
       });
   } catch (err) {
     console.log("Error", err);

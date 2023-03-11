@@ -25,6 +25,7 @@ const { nodeCache } = require("./client/cache");
 const {
   TOTAL_CONFIRMATIONS_24H,
   TOTAL_VOLUME_24H,
+  TOTAL_VOLUME_SENT_24H,
   TOTAL_CONFIRMATIONS_48H,
   TOTAL_VOLUME_48H,
   CONFIRMATIONS_PER_SECOND,
@@ -129,6 +130,7 @@ app.get("/api/market-statistics", async (req, res) => {
   const cachedVolume24h = nodeCache.get(TOTAL_VOLUME_24H);
   const cachedConfirmations48h = nodeCache.get(TOTAL_CONFIRMATIONS_48H);
   const cachedVolume48h = nodeCache.get(TOTAL_VOLUME_48H);
+  const cachedVolumeSent24h = nodeCache.get(TOTAL_VOLUME_SENT_24H);
 
   const {
     btcTransactionFees24h,
@@ -142,6 +144,7 @@ app.get("/api/market-statistics", async (req, res) => {
   res.send({
     [TOTAL_CONFIRMATIONS_24H]: cachedConfirmations24h,
     [TOTAL_VOLUME_24H]: cachedVolume24h,
+	[TOTAL_VOLUME_SENT_24H]: cachedVolumeSent24h,
     [TOTAL_CONFIRMATIONS_48H]: cachedConfirmations48h,
     [TOTAL_VOLUME_48H]: cachedVolume48h,
     [BITCOIN_TOTAL_TRANSACTION_FEES_24H]: btcTransactionFees24h,

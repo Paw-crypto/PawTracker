@@ -165,7 +165,7 @@ const useSocket = ({ account }: { account?: string }) => {
     isForcedClosed = false;
     setIsConnected(false);
 
-    ws = new WebSocket(websocketDomain || "wss://ws.paw.digital");
+    ws = new WebSocket(websocketDomain || "wss://ws3.paw.digital");
 
     ws.onopen = () => {
       clearInterval(pingInterval);

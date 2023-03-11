@@ -88,36 +88,36 @@ const getMarketStats = async fiats => {
       res = await fetch(
         "https://api.coingecko.com/api/v3/coins/paw?localization=false&tickers=false&market_data=true&community_data=true&developer_data=true&sparkline=true",
       );
+	
+	  const {
+		market_cap_rank: marketCapRank,
+		market_data: {
+		  market_cap_change_percentage_24h: marketCapChangePercentage24h,
+		  market_cap: { [fiat]: marketCap },
+		  total_volume: { [fiat]: volume24h },
+		  current_price: { [fiat]: currentPrice },
+		  price_change_percentage_24h: change24h,
+		  total_supply: totalSupply,
+		  circulating_supply: circulatingSupply,
+		},
+	  } = await res.json();
 
-      const {
-        market_cap_rank: marketCapRank,
-        market_data: {
-          market_cap_change_percentage_24h: marketCapChangePercentage24h,
-          market_cap: { [fiat]: marketCap },
-          total_volume: { [fiat]: volume24h },
-          current_price: { [fiat]: currentPrice },
-          price_change_percentage_24h: change24h,
-          total_supply: totalSupply,
-          circulating_supply: circulatingSupply,
-        },
-      } = await res.json();
+	  const marketStats = {
+		marketCapRank,
+		marketCap,
+		marketCapChangePercentage24h,
+		volume24h,
+		totalSupply,
+		circulatingSupply,
+		currentPrice,
+		change24h,
+	  };
 
-      const marketStats = {
-        marketCapRank,
-        marketCap,
-        marketCapChangePercentage24h,
-        volume24h,
-        totalSupply,
-        circulatingSupply,
-        currentPrice,
-        change24h,
-      };
-
-      nodeCache.set(`${COINGECKO_MARKET_STATS}-${fiat}`, marketStats);
-    }
+	  nodeCache.set(`${COINGECKO_MARKET_STATS}-${fiat}`, marketStats);
+	}
   } catch (err) {
     console.log("Error", err);
-    Sentry.captureException(err, { extra: { res } });
+    //Sentry.captureException(err, { extra: { res } });
   }
 };
 
@@ -138,6 +138,8 @@ const getMarketCapStats = async () => {
     const cryptocurrencies = await res.json();
 
     for (let i = 0; i < cryptocurrencies.length; i++) {
+		if(i>10)
+			break;
       const {
         id,
         symbol,
@@ -154,6 +156,7 @@ const getMarketCapStats = async () => {
       );
 
       try {
+		  /*
         const {
           community_data: {
             twitter_followers: twitterFollowers,
@@ -161,9 +164,19 @@ const getMarketCapStats = async () => {
           },
           developer_data: { stars: githubStars },
         } = await res.json();
-
+		*/
         const image = largeImage.replace("/large/", "/small/");
 
+        const cryptocurrency = {
+          id,
+          symbol,
+          name,
+          image,
+          marketCap,
+          marketCapRank,
+          fullyDilutedValuation
+        };
+	/*
         const cryptocurrency = {
           id,
           symbol,
@@ -197,6 +210,7 @@ const getMarketCapStats = async () => {
                 .toNumber()
             : null,
         };
+		*/
 
         marketCapStats.push(cryptocurrency);
         await db.collection(MARKET_CAP_STATS_COLLECTION).findOneAndUpdate(
@@ -258,14 +272,14 @@ cron.schedule("0 1 * * *", async () => {
 });
 
 // Every 30 seconds
-cron.schedule("*/30 * * * * *", async () => {
+cron.schedule("10 * * * * *", async () => {
   getPriceStats(defaultFiats);
   getMarketStats(defaultFiats);
 });
 
 // https://crontab.guru/#*/2_*_*_*_*
 // At every 2nd minute.
-cron.schedule("*/2 * * * *", async () => {
+cron.schedule("30 * * * *", async () => {
   getPriceStats(secondaryFiats);
   getMarketStats(secondaryFiats);
 });

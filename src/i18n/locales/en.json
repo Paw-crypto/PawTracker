@@ -118,7 +118,7 @@
   "menu": {
     "explore": "Explore",
     "representatives": "Tribes",
-    "developerFund": "Genesis Distribution",
+    "developerFund": "Development Distribution",
     "knownAccounts": "Known Accounts",
     "largeTransactions": "Large Transactions",
     "distribution": "Distribution",
@@ -234,7 +234,7 @@
       "originalDeveloperFundDescription": "Used to pay for development. Distribution of Paw is performed monthly and split among all team members. Initial core members received 1.5% each.",
       "originalExpenseFund": "Original Expense Fund",
       "originalExpenseFundDescription": "The expense fund of Paw is used to pay for any occuring bills, for example server listing fees, server bills etc.",
-      "totalAccounts": "{{totalAccounts}} Proof-Of-Growth Accounts",
+      "totalAccounts": "{{totalAccounts}} Development Funds",
       "percentOfTotalExpense": "{{percent}}%  of the total supply",
       "percentOfTotalDev": "{{percent}}%  of the total supply",
       "percentOfTotalPOG": "{{percent}}%  of the total supply"

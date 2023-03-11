@@ -8,6 +8,7 @@ const {
   MONGO_OPTIONS,
   TOTAL_CONFIRMATIONS_COLLECTION,
   TOTAL_VOLUME_COLLECTION,
+  TOTAL_VOLUME_SENT_COLLECTION,
   LARGE_TRANSACTIONS,
   CONFIRMATIONS_PER_SECOND,
 } = require("../constants");
@@ -33,10 +34,11 @@ try {
 
 let accumulatedConfirmations = 0;
 let accumulatedVolume = 0;
+let accumulatedVolumeSend = 0;
 let accumulatedLargeTransactionHashes = [];
 
 // https://github.com/cryptocode/nano-websocket-sample-nodejs/blob/master/index.js
-const ws = new ReconnectingWebSocket("wss://tracker.paw.digital/ws", [], {
+const ws = new ReconnectingWebSocket("ws://127.0.0.1:7048", [], {
   WebSocket: WS,
   connectionTimeout: 1000,
   maxRetries: 100000,
@@ -94,6 +96,12 @@ ws.onmessage = msg => {
         .plus(accumulatedVolume)
         .toNumber();
     }
+    // Skip accumulating dust amounts
+    if (["send"].includes(subtype) && amount.length >= 25) {
+      accumulatedVolumeSend = new BigNumber(amount)
+        .plus(accumulatedVolumeSend)
+        .toNumber();
+    }
   }
 };
 
@@ -128,6 +136,14 @@ function updateDb() {
       });
       accumulatedVolume = 0;
     }
+    if (accumulatedVolumeSend) {
+      db.collection(TOTAL_VOLUME_SENT_COLLECTION).insertOne({
+        value: accumulatedVolumeSend,
+        createdAt: new Date(),
+      });
+      accumulatedVolumeSend = 0;
+    }
+	
   } catch (err) {
     console.log("Error", err);
     Sentry.captureException(err);

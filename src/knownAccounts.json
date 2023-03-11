@@ -2,6 +2,7 @@
   "GENESIS_ACCOUNT": "paw_3yyz45ztct47x4ai3onfbkkuorzpdtnb15cmnhu8fhosnxrgci8c5xp8xbf6",
   "BURN_ACCOUNT": "paw_1goodbye11111111111111111111111111111111111111111111icwgd7tn",
   "NANOLOOKER": "paw_1ookerz3adg5rxc4zwwoshim5yyyihf6dpogjihwwq6ksjpq7ea4fuam5mmc",
+  "DEV_ACCOUNT": "paw_1riinxec6jkh5m3p9hgdyj8i5decjjhegxzpfuqhpmbtuy43z1rqqt65dgh4",
   "ORIGINAL_DEVELOPER_FUND_ACCOUNT": "paw_1re5oi6cxgzj3rqf9cj8a7nbnqhiiie5kyknjrg8es845n8p1tckfpuu8b56",
   "ORIGINAL_DEVELOPER_FUND_BLOCK": "C5AAEF346C418296CFDAB6A7AFBC74E6D36248228738D114D422DE53BC3F00AA",
   "ORIGINAL_DEVELOPER_FUND_BURN_BLOCK": "ECCB8CB65CD3106EDA8CE9AA893FEAD497A91BCA903890CBD7A5C59F06AB9113",
@@ -15,6 +16,13 @@
   "TWITTER_TIP_BOT": "paw_3harnk9ogeiw7xnnszekasgbbx3xi7yocrzymrr7xqkmrmqbq68pof1aju9t",
   "PAWQUEST_SHOOTER": "paw_3n7k4zxf8qif4f9k61if6oimsfdiobfytynmaagx95fwzdcgbct7i3xmndba",
   "PANDA_FAUCET_GAME": "paw_3hufk8opwpwsn5tp68ohs6zjiokx3rydnp8wijqpi19tnfiqupi7t1jdcd5y",
+  "DEF_FUNDS": [
+	"paw_1riinxec6jkh5m3p9hgdyj8i5decjjhegxzpfuqhpmbtuy43z1rqqt65dgh4",
+	"paw_31pw8qd8st3w8cmbo67uge3naoiif8trazwe3fzrx4ht3hbdue13xyfp8qh7",
+	"paw_3ft4uzfyfro8cwqfh7jgyi5qyy9ojk6a34ottsqmfkbod5k86dpgzuinz86u",
+	"paw_3kmx8gbhprhkuq3dhh5dh5cddyfeeqx9cfc9hxidw13uauqnqq1etgywgh4p",
+	"paw_3prmr9kuyy59cyd1gmaae31hhk7nfq36xmbm94q8ayad47ygykkfimpyrg6j"
+  ],
   "POG_FUND_ACCOUNTS": [
     "paw_176got1nmmiiads9etonxugs3k8jqriep3cwyc8urc8egkaooh3w7ncjg4wr",
     "paw_18eche7ufa7b8z8e3aci1gqz79gkugea4hxi3ci3zfr586t8hnk81n9ko9pk",
@@ -27,5 +35,9 @@
 	"paw_19ap3fhycjro954pucsdkq7ux4dn95e9yxu9yc3z9aaj3h6j1z8th6asa8jk",
 	"paw_3czw46c6muaaswpb9crxz9z3seoku4muq3816gmbd6g4q91otou1rr8e9jaq",
 	"paw_3bd9iw1py5n9aez8cn86qxtxh45j65jgdar8ow7cqsg87sd4gy5jmy96ob4p"
+  ],
+  "KNOWN_EXCHANGE_ACCOUNTS": [
+	"paw_1ysyxfp9ise6fb76ffi4ub9eyaqez1pjq8gsysjgbnizcbeyysg49h9obht4",
+	"paw_1t4ma4zanj51p187ynxyztocgbo63fe6ze1nccer49qkgfrxzcf7hr789uxg"
   ]
 }

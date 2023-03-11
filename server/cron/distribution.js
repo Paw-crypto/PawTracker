@@ -45,18 +45,22 @@ const getAccounts = async () => {
   const { count } = await rpc("frontier_count");
 
   let currentAccountCount = 0;
-  let nextAccount = "paw_1qfe5u7bcm7qrpp9rhk9p7wyqw316om1ts7s4gm466nwy6ueniik1gzwcno8";//BURN_ACCOUNT;
+  let nextAccount = BURN_ACCOUNT;
   let steps = 500000;
   let nextCount = 0;
-let pushedDefault = false;
+  let pushedDefault = false;
   let currentPage = 0;
-  let allAccounts = [];
+
   await mkdir(`${TMP_ACCOUNTS_PATH}`, { recursive: true });
 
   while (currentAccountCount < count) {
-	  nextCount = steps;
-    //nextCount = currentAccountCount + steps > count ? count - currentAccountCount : steps;
+    nextCount =
+      currentAccountCount + steps > count ? count - currentAccountCount : steps;
 
+	// Starts looping endlessly at this account.
+	if(nextAccount == 'paw_3zzzxxzx1tujybmmom8r59j55u69hucki6xomsm7xzy5kzxu6twh9zce3ni9')
+		break;
+	
     const { frontiers } = await rpc("frontiers", {
       account: nextAccount,
       count: nextCount + 1,
@@ -65,59 +69,46 @@ let pushedDefault = false;
     console.log(`getting frontier ${nextAccount}, count ${nextCount + 1}`);
 
     const currentFrontiers = Object.keys(frontiers);
-	if(!pushedDefault)
-	{
-		currentFrontiers.push("paw_18eche7ufa7b8z8e3aci1gqz79gkugea4hxi3ci3zfr586t8hnk81n9ko9pk");
-		currentFrontiers.push("paw_3qnosbjb1t1e7jxe3xuhy68kzctqcgkdu3ium5sk4ptaut7cbqphbd4whnxc");
-		currentFrontiers.push("paw_3e443j3cj8mzrp9fcxho9wquygz98h53wexxmsaexh57w3ht4zpcpzzy13n3");
-		currentFrontiers.push("paw_31t4m1ioogtk6kw1g98wf99dr4id4qajgok37iujq4qkwpqday5c1xhai4m4");
-		currentFrontiers.push("paw_3emytdw99gtpgt8chjwj71crpmmm59bccsnzcunyw97tih3ajp3duaq39845");
-		currentFrontiers.push("paw_3czg5xi369uxfybq55okc4ca7eeam5ik5mmc6hyfx9mwgjp383tsaukc7xpq");
-		currentFrontiers.push("paw_1fj6egy61fdii8cg48hyeeq54qkdnocydpbqk7rzpe8h7ibsjk8nutt5o3tb");
-		currentFrontiers.push("paw_176got1nmmiiads9etonxugs3k8jqriep3cwyc8urc8egkaooh3w7ncjg4wr");
-		currentFrontiers.push("paw_19ap3fhycjro954pucsdkq7ux4dn95e9yxu9yc3z9aaj3h6j1z8th6asa8jk");
-		currentFrontiers.push("paw_3czw46c6muaaswpb9crxz9z3seoku4muq3816gmbd6g4q91otou1rr8e9jaq");
-		currentFrontiers.push("paw_3bd9iw1py5n9aez8cn86qxtxh45j65jgdar8ow7cqsg87sd4gy5jmy96ob4p");
-		currentFrontiers.push("paw_3nx3w8dzmym4otn94hqw4p1r4ztk5hm43xty3jnbtuah6km4hniwasxgtb7x");
-		currentFrontiers.push("paw_1re5oi6cxgzj3rqf9cj8a7nbnqhiiie5kyknjrg8es845n8p1tckfpuu8b56");
-		currentFrontiers.push("paw_1ggha4iy5im5aa34te47bmtn1hmfbaa1f3qkbfrtnfstqnjwenh3btdkuuyf");
-		currentFrontiers.push("paw_13wemmuc616hqtbrhnxrato7ruit799owmnwpady8cgyn845sipmy9bys8rx");
-		currentFrontiers.push("paw_1goodbye11111111111111111111111111111111111111111111icwgd7tn");
-		currentFrontiers.push("paw_3k7ax6z5f9dgh6oo5c54ebzcoz3r8m3dnxnb3h6syc8h3w1jy6owq1kkdktp");
-		currentFrontiers.push("paw_1ieybwizw1kdtc1nj3yzidtjmryasz8hxbgruxr1hrshkc7n9bzb37wiw83b");
-		currentFrontiers.push("paw_353heao14o8yxxyrozkcqtgghpqi8wijtp1qegidt799exqhesdp3isfb8w1");
-		currentFrontiers.push("paw_1c55kj6ptyfoqs7fyad8fsrpd15onjwwyuj6jy5f975keecn5zgr4aeefome");
-		currentFrontiers.push("paw_1e7w6e3xfkcbn5s6gx9koug81kj7fynqo959bbndnorkxp4o3dr1nf6hi74b");
-		currentFrontiers.push("paw_3zp5ipq4cx75kwurbduekbpk4apa35okg3ge91xjxffzu7peox5r95mcrmun");
-	
-		pushedDefault = true;
-	}
     // As the request was steps + 1, remove the first element which was the nextAccount
     currentFrontiers.shift();
     currentAccountCount += currentFrontiers.length;
-	
     if (currentFrontiers.length) {
       nextAccount = currentFrontiers[currentFrontiers.length - 1];
-	  allAccounts = allAccounts.concat(currentFrontiers);
-	  /*
+
+		if(!pushedDefault)
+		{
+			currentFrontiers.push("paw_18eche7ufa7b8z8e3aci1gqz79gkugea4hxi3ci3zfr586t8hnk81n9ko9pk");
+			currentFrontiers.push("paw_3qnosbjb1t1e7jxe3xuhy68kzctqcgkdu3ium5sk4ptaut7cbqphbd4whnxc");
+			currentFrontiers.push("paw_3e443j3cj8mzrp9fcxho9wquygz98h53wexxmsaexh57w3ht4zpcpzzy13n3");
+			currentFrontiers.push("paw_31t4m1ioogtk6kw1g98wf99dr4id4qajgok37iujq4qkwpqday5c1xhai4m4");
+			currentFrontiers.push("paw_3emytdw99gtpgt8chjwj71crpmmm59bccsnzcunyw97tih3ajp3duaq39845");
+			currentFrontiers.push("paw_3czg5xi369uxfybq55okc4ca7eeam5ik5mmc6hyfx9mwgjp383tsaukc7xpq");
+			currentFrontiers.push("paw_1fj6egy61fdii8cg48hyeeq54qkdnocydpbqk7rzpe8h7ibsjk8nutt5o3tb");
+			currentFrontiers.push("paw_176got1nmmiiads9etonxugs3k8jqriep3cwyc8urc8egkaooh3w7ncjg4wr");
+			currentFrontiers.push("paw_19ap3fhycjro954pucsdkq7ux4dn95e9yxu9yc3z9aaj3h6j1z8th6asa8jk");
+			currentFrontiers.push("paw_3czw46c6muaaswpb9crxz9z3seoku4muq3816gmbd6g4q91otou1rr8e9jaq");
+			currentFrontiers.push("paw_3bd9iw1py5n9aez8cn86qxtxh45j65jgdar8ow7cqsg87sd4gy5jmy96ob4p");
+			currentFrontiers.push("paw_3nx3w8dzmym4otn94hqw4p1r4ztk5hm43xty3jnbtuah6km4hniwasxgtb7x");
+			currentFrontiers.push("paw_1re5oi6cxgzj3rqf9cj8a7nbnqhiiie5kyknjrg8es845n8p1tckfpuu8b56");
+			currentFrontiers.push("paw_1ggha4iy5im5aa34te47bmtn1hmfbaa1f3qkbfrtnfstqnjwenh3btdkuuyf");
+			currentFrontiers.push("paw_13wemmuc616hqtbrhnxrato7ruit799owmnwpady8cgyn845sipmy9bys8rx");
+			//currentFrontiers.push("paw_1goodbye11111111111111111111111111111111111111111111icwgd7tn");
+			currentFrontiers.push("paw_3k7ax6z5f9dgh6oo5c54ebzcoz3r8m3dnxnb3h6syc8h3w1jy6owq1kkdktp");
+			currentFrontiers.push("paw_1ieybwizw1kdtc1nj3yzidtjmryasz8hxbgruxr1hrshkc7n9bzb37wiw83b");
+			currentFrontiers.push("paw_353heao14o8yxxyrozkcqtgghpqi8wijtp1qegidt799exqhesdp3isfb8w1");
+			currentFrontiers.push("paw_1c55kj6ptyfoqs7fyad8fsrpd15onjwwyuj6jy5f975keecn5zgr4aeefome");
+			currentFrontiers.push("paw_1e7w6e3xfkcbn5s6gx9koug81kj7fynqo959bbndnorkxp4o3dr1nf6hi74b");
+			currentFrontiers.push("paw_3zp5ipq4cx75kwurbduekbpk4apa35okg3ge91xjxffzu7peox5r95mcrmun");
+
+			pushedDefault = true;
+		}
       fs.writeFileSync(
         `${TMP_ACCOUNTS_PATH}/${currentPage}.json`,
         JSON.stringify(currentFrontiers, null, 2),
       );
       currentPage += 1;
-	  */
     }
-	else
-		break;
   }
-  
-	let uniqueArray = allAccounts.filter(function(item, pos) {
-		return allAccounts.indexOf(item) == pos;
-	});
-	  fs.writeFileSync(
-		`${TMP_ACCOUNTS_PATH}/${currentPage}.json`,
-		JSON.stringify(uniqueArray, null, 2),
-	  );
 };
 
 const getKnownExchanges = async () => {
@@ -169,16 +160,13 @@ const getDistribution = async () => {
 
   const tmpAccountFiles = await readdir(TMP_ACCOUNTS_PATH);
 
-	const richList = {};
   for (let y = 0; y < tmpAccountFiles.length; y++) {
     const accounts = JSON.parse(
       fs.readFileSync(`${TMP_ACCOUNTS_PATH}/${tmpAccountFiles[y]}`, "utf8"),
     );
     const balancesChunks = chunk(accounts, 5000);
 
-
-    
-	for (let i = 0; i < balancesChunks.length; i++) {
+    for (let i = 0; i < balancesChunks.length; i++) {
       let { balances } = await rpc("accounts_balances", {
         accounts: balancesChunks[i],
       });
@@ -188,6 +176,8 @@ const getDistribution = async () => {
           balancesChunks.length
         }`,
       );
+
+      const richList = {};
 
       await Promise.all(
         Object.entries(balances).map(
@@ -270,16 +260,16 @@ const getDistribution = async () => {
         JSON.stringify({ distribution, dormantFunds }, null, 2),
       );
 
+      const richListData = Object.entries(richList).flatMap(acc =>
+        acc.reverse(),
+      );
+
+      redisClient.zadd(`${REDIS_RICH_LIST}_TMP`, ...richListData);
+
       // @TODO check if can remove the sleep now that the node is a bit more powerful
       await sleep(100);
     }
   }
-
-	  const richListData = Object.entries(richList).flatMap(acc =>
-		acc.reverse(),
-	  );
-
-	  redisClient.zadd(`${REDIS_RICH_LIST}_TMP`, ...richListData);
 
   return { distribution, dormantFunds, knownExchanges };
 };
@@ -289,11 +279,8 @@ const doDistributionCron = async () => {
     const startTime = new Date();
     console.log("Distribution cron started");
 
-    const {
-      distribution,
-      dormantFunds,
-      knownExchanges,
-    } = await getDistribution();
+    const { distribution, dormantFunds, knownExchanges } =
+      await getDistribution();
 
     fs.writeFileSync(DISTRIBUTION_PATH, JSON.stringify(distribution, null, 2));
     fs.writeFileSync(DORMANT_FUNDS_PATH, JSON.stringify(dormantFunds, null, 2));
@@ -355,13 +342,12 @@ const doDistributionCron = async () => {
 
 // https://crontab.guru/#15_5_*_*_1
 // “At 05:15 on Monday.”
-cron.schedule("15 5 * * 1", async () => {
-//cron.schedule("45 * * * *", async () => {
+cron.schedule("15 5 * * *", async () => {
   if (process.env.NODE_ENV !== "production") return;
   // Disable cron until amounts are sorted out
   doDistributionCron();
 });
-
+doDistributionCron();
 // if (
 //   process.env.NODE_ENV === "production" &&
 //   !fs.existsSync(DISTRIBUTION_PATH) &&

@@ -22,6 +22,7 @@ import { rawToRai, timestampToDate } from "components/utils";
 import {
   GENESIS_ACCOUNT,
   POG_FUND_ACCOUNTS,
+  DEF_FUNDS,
   ORIGINAL_DEVELOPER_FUND_BLOCK,
   ORIGINAL_DEVELOPER_FUND_BURN_BLOCK,
   ORIGINAL_DEVELOPER_FUND_ACCOUNT,
@@ -52,7 +53,7 @@ const DeveloperFund: React.FC = () => {
   const {
     accountsBalances,
     isLoading: isAccountsBalancesLoading,
-  } = useAccountsBalances(POG_FUND_ACCOUNTS);
+  } = useAccountsBalances(DEF_FUNDS);
   //const { availableSupply } = useAvailableSupply();
   const totalSupply = 340282366920.9385;
   const { developerFundTransactions } = useDeveloperAccountFund();
@@ -107,187 +108,6 @@ const DeveloperFund: React.FC = () => {
       <Helmet>
         <title>PAW {t("menu.developerFund")}</title>
       </Helmet>
-      <Row gutter={[12, 0]}>
-        <Col xs={24} lg={12}>
-          <Title level={3}>{t("pages.developerFund.originalPOGFund")}</Title>
-          <Card size="small" bordered={false} className="detail-layout">
-            <div
-              className="divider"
-              style={{
-                paddingBottom: "6px",
-                marginBottom: "12px",
-              }}
-            >
-              {t("pages.developerFund.description", {
-                totalAccounts: data.length,
-              })}
-              <br />
-             
-            </div>
-
-            <Row gutter={6}>
-              <Col xs={24} sm={6}>
-                {t("common.totalBalance")}
-              </Col>
-              <Col xs={24} sm={18}>
-                <LoadingStatistic
-                  isLoading={skeletonProps.loading}
-                  suffix="PAW"
-                  value={totalBalance}
-                />
-                <Skeleton {...skeletonProps}>
-                  {`${CurrencySymbol?.[fiat]}${fiatBalance} / ${btcBalance} BTC`}
-                </Skeleton>
-				<br />
-                {t("pages.developerFund.percentOfTotalPOG", {
-                  percent: new BigNumber(totalBalance * 100)
-                    .dividedBy(totalSupply)
-                    .toFormat(2),
-                })}
-              </Col>
-            </Row>
-			
-            <Row gutter={6}>
-              <Col xs={24} sm={6}>
-                {t("pages.developerFund.originalPOGBalance")}
-              </Col>
-              <Col xs={24} sm={18}>
-                {new BigNumber("272225893536").toFormat()} PAW
-                <br />
-                {t("pages.developerFund.percentOfTotalPOG", {
-                  percent: new BigNumber(272225893536 * 100)
-                    .dividedBy(totalSupply)
-                    .toFormat(2),
-                })}
-              </Col>
-            </Row>
-
-          </Card>
-        </Col>
-        <Col xs={24} lg={12}>
-          <Title level={3}>
-            {t("pages.developerFund.originalDeveloperFund")}
-          </Title>
-          <Card size="small" bordered={false} className="detail-layout">
-			<div
-			  className="divider"
-			  style={{
-				paddingBottom: "6px",
-				marginBottom: "12px",
-			  }}
-			>
-			  <Trans i18nKey="pages.developerFund.originalDeveloperFundDescription">
-				<Link to={`/account/${GENESIS_ACCOUNT}`}>Genesis Account</Link>
-				<Link
-				  to={`/block/${ORIGINAL_DEVELOPER_FUND_BURN_BLOCK}`}
-				></Link>
-			  </Trans>
-			</div>
-
-            <Row gutter={6}>
-              <Col xs={24} sm={6}>
-                {t("common.account")}
-              </Col>
-              <Col xs={24} sm={18}>
-                <Link
-                  to={`/account/${ORIGINAL_DEVELOPER_FUND_ACCOUNT}`}
-                  className="break-word"
-                >
-                  {ORIGINAL_DEVELOPER_FUND_ACCOUNT}
-                </Link>
-              </Col>
-            </Row>
-            <Row gutter={6}>
-              <Col xs={24} sm={6}>
-                {t("common.balance")}
-              </Col>
-              <Col xs={24} sm={18}>
-                {new BigNumber("34028236692").toFormat()} PAW
-                <br />
-                {t("pages.developerFund.percentOfTotalDev", {
-                  percent: new BigNumber(34028236692 * 100)
-                    .dividedBy(totalSupply)
-                    .toFormat(2),
-                })}
-              </Col>
-            </Row>
-            <Row gutter={6}>
-              <Col xs={24} sm={6}>
-                {t("common.block")}
-              </Col>
-              <Col xs={24} sm={18}>
-                <Link
-                  to={`/block/${ORIGINAL_DEVELOPER_FUND_BLOCK}`}
-                  className="break-word"
-                >
-                  {ORIGINAL_DEVELOPER_FUND_BLOCK}
-                </Link>
-              </Col>
-            </Row>
-          </Card>
-		  
-          <Title level={3}>
-            {t("pages.developerFund.originalExpenseFund")}
-          </Title>
-          <Card size="small" bordered={false} className="detail-layout">
-            <div
-              className="divider"
-              style={{
-                paddingBottom: "6px",
-                marginBottom: "12px",
-              }}
-            >
-              <Trans i18nKey="pages.developerFund.originalExpenseFundDescription">
-                <Link to={`/account/${GENESIS_ACCOUNT}`}>Genesis</Link>
-                <Link
-                  to={`/block/${ORIGINAL_DEVELOPER_FUND_BURN_BLOCK}`}
-                ></Link>
-              </Trans>
-            </div>
-
-            <Row gutter={6}>
-              <Col xs={24} sm={6}>
-                {t("common.account")}
-              </Col>
-              <Col xs={24} sm={18}>
-                <Link
-                  to={`/account/${ORIGINAL_EXPENSE_FUND_ACCOUNT}`}
-                  className="break-word"
-                >
-                  {ORIGINAL_EXPENSE_FUND_ACCOUNT}
-                </Link>
-              </Col>
-            </Row>
-            <Row gutter={6}>
-              <Col xs={24} sm={6}>
-                {t("common.balance")}
-              </Col>
-              <Col xs={24} sm={18}>
-                {new BigNumber("34028236692").toFormat()} PAW
-                <br />
-                {t("pages.developerFund.percentOfTotalExpense", {
-                  percent: new BigNumber(34028236692 * 100)
-                    .dividedBy(totalSupply)
-                    .toFormat(2),
-                })}
-              </Col>
-            </Row>
-            <Row gutter={6}>
-              <Col xs={24} sm={6}>
-                {t("common.block")}
-              </Col>
-              <Col xs={24} sm={18}>
-                <Link
-                  to={`/block/${ORIGINAL_EXPENSE_FUND_BLOCK}`}
-                  className="break-word"
-                >
-                  {ORIGINAL_EXPENSE_FUND_BLOCK}
-                </Link>
-              </Col>
-            </Row>
-          </Card>
-        </Col>
-      </Row>
 
       <Title level={3}>
         {t("pages.developerFund.totalAccounts", { totalAccounts: data.length })}

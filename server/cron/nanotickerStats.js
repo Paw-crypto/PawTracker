@@ -15,11 +15,11 @@ const getNanotickerStats = async () => {
     nodeCache.set(NANOTICKER_STATS, { cps });
   } catch (err) {
     console.log("Error", err);
-    Sentry.captureException(err, { extra: { res } });
+    //Sentry.captureException(err, { extra: { res } });
   }
 };
 
 // Every 3 seconds
 cron.schedule("*/3 * * * * *", async () => {
-  getNanotickerStats();
+  //getNanotickerStats();
 });
